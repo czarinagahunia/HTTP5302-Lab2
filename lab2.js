@@ -52,7 +52,7 @@ pTodayDate.innerHTML = "Today is " + todayDayofWeek + ", " + todayMonth + " " + 
 var userBday;
 //function button
 getBirthday.onclick = function () {
-    //assign userBday value ti input valye
+    //assign userBday value to input value
     userBday = userBirthday.value;
     console.log(userBday);
     var userBdayDate = new Date(userBday + " GMT-0400");
@@ -65,6 +65,6 @@ function constructDateString(inputDate) {
         return 'Happy Birthday';
     }
     //return the date of the birthday of the current year
-    var currentYearBday = new Date(today.getFullyear + "-" + inputDate.getMonth() + "-" + inputDate.getDate());
-    return "Your birthday is on " + currentYearBday.getDay() + ", " + months[currentYearBday.getMonth()] + " " + currentYearBday.getDate() + ", " + today.getFullYear();
+    var currentYearBday = new Date(today.getFullyear + "-" + (inputDate.getMonth() + 1) + "-" + inputDate.getDate());
+    return "Your birthday is on " + days[currentYearBday.getDay()] + ", " + months[currentYearBday.getMonth()] + " " + currentYearBday.getDate() + ", " + today.getFullYear();
 }

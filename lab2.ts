@@ -58,11 +58,11 @@ pTodayDate.innerHTML = `Today is ${ todayDayofWeek }, ${ todayMonth } ${ today.g
 
 
 //Part 2 branch lab2
-let userBday : string
+let userBday : string;
 
 //function button
 getBirthday.onclick = function() {
-    //assign userBday value ti input valye
+    //assign userBday value to input value
     userBday = userBirthday.value;
     console.log(userBday);
 
@@ -79,8 +79,8 @@ function constructDateString(inputDate : Date) : string {
     }
 
     //return the date of the birthday of the current year
-    let currentYearBday : Date = new Date(`${today.getFullyear}-${inputDate.getMonth()}-${inputDate.getDate()}`);
+    let currentYearBday : Date = new Date(`${today.getFullyear}-${inputDate.getMonth() + 1}-${inputDate.getDate()}`);
 
-    return `Your birthday is on ${currentYearBday.getDay()}, ${months[currentYearBday.getMonth()]} ${currentYearBday.getDate()}, ${today.getFullYear()}`;
+    return `Your birthday is on ${days[currentYearBday.getDay()]}, ${months[currentYearBday.getMonth()]} ${currentYearBday.getDate()}, ${today.getFullYear()}`;
 
 }
